@@ -74,17 +74,5 @@ int main1()
     int p = count_if(v.begin(), v.end(), func);
 	cout << p << "\n";
 
-
-	//k++;
-	//k--;
-	//k -= 3;
-	//*k 
-
-	//for (k = v.begin(); k < v.end(); k++)
-	//	cout << *k << " ";
-
-	//for (auto& x : v)
-	//	cout << x << " ";
-
 	return 0;
 }
