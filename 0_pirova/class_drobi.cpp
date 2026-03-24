@@ -31,7 +31,7 @@ public:
         return *this;
     }
     
-    Drobi operator-(int k) {
+    Drobi operator-(int k) const {
         const Drobi d2(k);
         int c, z;
         c = chis * d2[1] - d2[0] * znam;
@@ -39,7 +39,7 @@ public:
         return Drobi(c, z);
     }
     
-    void print() {
+    void print() const {
         std::cout << chis << "/" << znam << "\n";
     }
     
@@ -66,20 +66,16 @@ public:
     }
 
     // постфиксный ++, d++
-    Drobi operator++(int) {
+    Drobi operator++(int) const {
         Drobi x(chis + znam, znam);
         return x;
     }
 
-    int& operator()(int i, int j) {
-        return chis;
-    }
 
-
-/*    friend Drobi operator-(const Drobi& d1, const Drobi& d2);
-    friend operator-(int k, const Drobi& d2);
+    friend Drobi operator-(const Drobi& d1, const Drobi& d2);
+    friend Drobi operator-(int k, const Drobi& d2);
     friend ostream& operator<<(ostream& s, const Drobi& d);
-    */
+    
 };
 
 
@@ -119,8 +115,6 @@ int main()
    Drobi z1 = ++d;
    
    cout << z << " " << z1 << " " << d;
-
-   d(1, 1);
 
    d3 = d - d2;
 
